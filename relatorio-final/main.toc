@@ -26,8 +26,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}Algoritmo Supervisionado de Classifica\IeC {\c c}\IeC {\~a}o}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Conclus\IeC {\~o}es}{14}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~o}es}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6}Agradecimentos}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliografia}{15}
+\contentsline {section}{\numberline {7}Bibliografia}{16}
