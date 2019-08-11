@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  10 AUG 2019 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  10 AUG 2019 23:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1159,26 +1159,42 @@ Package pdftex.def Info: figures/hiperparametros.png used on input line 246.
 File: figures/model_accuracy.png Graphic file (type png)
 
 <use figures/model_accuracy.png>
-Package pdftex.def Info: figures/model_accuracy.png used on input line 259.
+Package pdftex.def Info: figures/model_accuracy.png used on input line 258.
 (pdftex.def)             Requested size: 273.14923pt x 246.37791pt.
  [16 <./figures/network_summary.jpeg> <./figures/hiperparametros.png>]
 <figures/model_loss.png, id=129, 831.105pt x 718.3638pt>
 File: figures/model_loss.png Graphic file (type png)
 
 <use figures/model_loss.png>
-Package pdftex.def Info: figures/model_loss.png used on input line 266.
+Package pdftex.def Info: figures/model_loss.png used on input line 264.
 (pdftex.def)             Requested size: 273.14923pt x 236.09619pt.
 
-Overfull \hbox (4.33307pt too wide) in paragraph at lines 272--273
-[]\OT1/cmr/m/n/12 Nas Fi-gu-ras de re-fer^encia a re-fer^encia, consegue-se per
--ce-ber um fun-ci-o-na-mento aceit^^Savel
- []
+<figures/frame507.png, id=130, 997.7275pt x 751.80875pt>
+File: figures/frame507.png Graphic file (type png)
 
-[17 <./figures/model_accuracy.png> <./figures/model_loss.png>]
+<use figures/frame507.png>
+Package pdftex.def Info: figures/frame507.png used on input line 274.
+(pdftex.def)             Requested size: 273.14923pt x 205.82457pt.
+ [17 <./figures/model_accuracy.png> <./figures/model_loss.png>] <figures/frame4
+59.png, id=136, 999.735pt x 744.7825pt>
+File: figures/frame459.png Graphic file (type png)
 
-LaTeX Warning: Empty bibliography on input line 291.
+<use figures/frame459.png>
+Package pdftex.def Info: figures/frame459.png used on input line 280.
+(pdftex.def)             Requested size: 273.14923pt x 203.49185pt.
 
-[18] (./main.aux)
+<figures/frame461.png, id=137, 1007.765pt x 760.8425pt>
+File: figures/frame461.png Graphic file (type png)
+
+<use figures/frame461.png>
+Package pdftex.def Info: figures/frame461.png used on input line 288.
+(pdftex.def)             Requested size: 273.14923pt x 206.21967pt.
+ [18 <./figures/frame507.png> <./figures/frame459.png>] [19 <./figures/frame461
+.png>]
+
+LaTeX Warning: Empty bibliography on input line 307.
+
+[20] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1193,10 +1209,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  )
 (\end occurred when \iftrue on line 39 was incomplete) 
 Here is how much of TeX's memory you used:
- 11026 strings out of 493029
- 166731 string characters out of 6136235
+ 11044 strings out of 493029
+ 167106 string characters out of 6136235
  329428 words of memory out of 5000000
- 14329 multiletter control sequences out of 15000+600000
+ 14344 multiletter control sequences out of 15000+600000
  10509 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,19n,49p,816b,1555s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1208,10 +1224,10 @@ s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti12.pfb>
-Output written on main.pdf (18 pages, 857888 bytes).
+Output written on main.pdf (20 pages, 918901 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
+ 172 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
