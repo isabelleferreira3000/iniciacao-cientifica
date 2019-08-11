@@ -202,12 +202,18 @@ No construtor dessa classe também é criado todo o design da tela da interface.
 
 Ao clicar nos botões prevFrame e nextFrame, a tela é atualizada para exibir os 22 jogadores e a bola nesse determinado frame selecionado. O botão unmarkAll desseleciona todos os oponentes que o usuário tinha selecionado para marcar naquele frame em questão. Por fim, o botão confirm chama a classe PositioningFileManager e escreve no arquivo de texto (.txt) quais os jogadores oponentes que deveriam ser marcados naquela situação de jogo.
 
-Dessa forma, a aparência da interface está como representada na Figura \ref{fig:ms-widget}.
+Dessa forma, a aparência da interface está como representada nas Figuras \ref{fig:ms-widget} e \ref{fig:ms-widget2}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{figures/ms-widget.png}
+	\includegraphics[width=0.7\textwidth]{figures/frame1.png}
    \caption{Aparência da ferramenta de interface gráfica Marking System Widget.} \label{fig:ms-widget}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/frame14.png}
+   \caption{Aparência da ferramenta de interface gráfica Marking System Widget, com alguns oponentes marcados.} \label{fig:ms-widget2}
 \end{figure}
 
 \subsection{Algoritmo Supervisionado de Classificação}
@@ -225,15 +231,41 @@ No contexto do projeto de pesquisa, tem-se o objetivo de, partindo de um dataset
 
 \subsubsection{Implementação da rede neural}
 
-A implementação foi feita utilizando a framework Keras, em Python, de acordo com o resumo apresentado na Figura referência.
+A implementação foi feita utilizando a framework Keras, em Python, de acordo com o resumo apresentado na Figura \ref{fig:network-summary}.
 
-A rede consiste de 3 camadas escondidas: as duas primeiras com 64 neurônios e a última com 11 neurônios, referente as informações dos 11 jogadores oponentes (se eles devem ser marcados, ou não). A função de ativação utilizada foi a tangente hiperbólica para as duas primeiras camadas escondidas e sigmoide para a última, com learning rate de $10^{-5}$. Foram utilizadas um total de 5000 épocas. O conjunto completo de todos os hiperparâmetros utilizados foi apresentado na Figura referência.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/network_summary.jpeg}
+   \caption{Resumo da rede neural implentada utilizando Keras, em Python.} \label{fig:network-summary}
+\end{figure}
+
+A rede consiste de 3 camadas escondidas: as duas primeiras com 64 neurônios e a última com 11 neurônios, referente as informações dos 11 jogadores oponentes (se eles devem ser marcados, ou não). A função de ativação utilizada foi a tangente hiperbólica para as duas primeiras camadas escondidas e sigmoide para a última, com learning rate de $10^{-5}$. Foram utilizadas um total de 5000 épocas. O conjunto completo de todos os hiperparâmetros utilizados foi apresentado na Figura \ref{fig:hiperparametros}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{figures/hiperparametros.png}
+   \caption{Resumo dos hiperparâmetros utilizados na rede neural implentada.} \label{fig:hiperparametros}
+\end{figure}
 
 \subsubsection{Resultados da rede}
 
 Utilizou-se inicialmente um dataset de 500 frames, referentes a mais de 4 horas seguidas de partida. Esse dataset foi gerado conforme explicado anteriormente, a partir de conhecimento humano. Desse conjunto de frames, 300 (60\% do total) foram escolhidos para o treinamento da rede, 100 (20\% do total) para set de validação cruzada. Já os últimos 100 (20\% do total), foram escolhidos para o teste propriamente dito, ou seja, um dataset no qual a rede jamais tinha tido contato anteriormente.
 
-O treino da rede obteve um modelo com acurácia de 89.15\% no dataset de treino, 85.57\% no dataset de validação cruzada, e 86.92\% no dataset de teste. A evolução da acurácia e valor de custo com o passar das épocas foram apresentadas nas Figuras referência e referência.
+O treino da rede obteve um modelo com acurácia de 89.15\% no dataset de treino, 85.57\% no dataset de validação cruzada, e 86.92\% no dataset de teste. A evolução da acurácia e valor de custo com o passar das épocas foram apresentadas nas Figuras \ref{fig:acc} e \ref{fig:loss}.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/model_accuracy.png}
+   \caption{Acurácia do modelo com o passar das épocas.} \label{fig:acc}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/model_loss.png}
+   \caption{Função de custo do modelo com o passar das épocas.} \label{fig:loss}
+\end{figure}
 
 Alguns exemplos dos resultados no dataset de teste foram apresentados a seguir.
 
