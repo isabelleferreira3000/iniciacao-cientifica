@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Resumo das Atividades Realizadas}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Descri\IeC {\c c}\IeC {\~a}o do Problema}{6}
+\contentsline {section}{\numberline {3}Descri\IeC {\c c}\IeC {\~a}o do Problema}{7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Resultados Obtidos}{9}
 \defcounter {refsection}{0}\relax 
@@ -20,14 +20,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.2.2}Classe Frame}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.3}Classe PositioningFileManager}{12}
+\contentsline {subsubsection}{\numberline {4.2.3}Classe PositioningFileManager}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.4}Classe MarkingSystemWidget}{12}
+\contentsline {subsubsection}{\numberline {4.2.4}Classe MarkingSystemWidget}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Algoritmo Supervisionado de Classifica\IeC {\c c}\IeC {\~a}o}{13}
+\contentsline {subsection}{\numberline {4.3}Algoritmo Supervisionado de Classifica\IeC {\c c}\IeC {\~a}o}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Conclus\IeC {\~o}es}{13}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~o}es}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Agradecimentos}{14}
+\contentsline {section}{\numberline {6}Agradecimentos}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliografia}{14}
+\contentsline {section}{\numberline {7}Bibliografia}{15}
