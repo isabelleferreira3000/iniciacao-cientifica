@@ -212,6 +212,8 @@ Dessa forma, a aparência da interface está como representada na Figura \ref{fi
 
 \subsection{Algoritmo Supervisionado de Classificação}
 
+\subsubsection{Escolha do algoritmo}
+
 Aprendizado de máquina (ou \textit{Machine Learning}, em inglês), de forma simplificada, é um método de análise de dados que automatiza o processo de aprender a partir de dados de entrada, identificar padrões e tomar decisões com o mínimo de intervenção humana. Uma descrição mais detalhada dessa seção pode ser encontrada na referência [referência].
 
 Os métodos mais adotados de machine learning podem ser classificados em três grandes grupos, tendo em vista os tipos de dados de entrada da inteligência: aprendizado supervisionado, aprendizado não supervisionado ou  aprendizado por reforço. Em um aprendizado supervisionado, A inteligência tem acesso a informações como
@@ -221,6 +223,19 @@ Outra classificação possível se refere as diferentes saídas possíveis de si
 
 No contexto do projeto de pesquisa, tem-se o objetivo de, partindo de um dataset com as posições dos 22 jogadores e da bola (além de qual é o lado aliado e qual o adversário) e o conhecimento humano de quais jogadores devem ser marcados, classificar cada um dos 11 oponentes de uma situação ainda não vista pela inteligência como marcáveis ou não. Tendo em vista o exposto acima, fica evidente em primeiro momento que o método de aprendizado de máquina supervisionado de classificação aparenta-se ser o ideal para se atingir o resultado esperado.
 
+\subsubsection{Implementação da rede neural}
+
+A implementação foi feita utilizando a framework Keras, em Python, de acordo com o resumo apresentado na Figura referência.
+
+A rede consiste de 3 camadas escondidas: as duas primeiras com 64 neurônios e a última com 11 neurônios, referente as informações dos 11 jogadores oponentes (se eles devem ser marcados, ou não). A função de ativação utilizada foi a tangente hiperbólica para as duas primeiras camadas escondidas e sigmoide para a última, com learning rate de $10^{-5}$. Foram utilizadas um total de 5000 épocas. O conjunto completo de todos os hiperparâmetros utilizados foi apresentado na Figura referência.
+
+\subsubsection{Resultados da rede}
+
+Utilizou-se inicialmente um dataset de 500 frames, referentes a mais de 4 horas seguidas de partida. Esse dataset foi gerado conforme explicado anteriormente, a partir de conhecimento humano. Desse conjunto de frames, 300 (60\% do total) foram escolhidos para o treinamento da rede, 100 (20\% do total) para set de validação cruzada. Já os últimos 100 (20\% do total), foram escolhidos para o teste propriamente dito, ou seja, um dataset no qual a rede jamais tinha tido contato anteriormente.
+
+O treino da rede obteve um modelo com acurácia de 89.15\% no dataset de treino, 85.57\% no dataset de validação cruzada, e 86.92\% no dataset de teste. A evolução da acurácia e valor de custo com o passar das épocas foram apresentadas nas Figuras referência e referência.
+
+ 
 
 \section{Conclusões}
 
