@@ -35,5 +35,3 @@
 \contentsline {section}{\numberline {5}Conclus\IeC {\~o}es}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6}Agradecimentos}{19}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliografia}{20}
