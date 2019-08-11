@@ -75,7 +75,7 @@ Planejamento Atualizado:
 
 Ao longo dos dois primeiros meses, foram realizados estudos sobre como a marcação era feita atualmente na equipe ITAndroids e qual seriam os algoritmos de aprendizado de máquina utilizados. O método utilizado se baseava em algumas condições heurísticas referentes aos oponentes.
 
-Foi decidido que será usado inicialmente um algoritmo supervisionado de classificação. Esse algoritmo foi escolhido entre as opções de algortimos supervisionados de regressão, algoritmos não supervisionados e algoritmos de reforço. Uma introdução a esse assuntos pode ser encontrada em [referência] para algoritmos supervisionados de regressão, em [referência] para algoritmos não supervisionados e em [referência] para algoritmos de reforço. Para uma descrição sobre porque seria o ideal entre essas opções aplicar um algoritmo supervisionado de classificação, pode-se encontrar na referência [referência].
+Foi decidido inicialmente que será usado um algoritmo supervisionado de classificação. Esse algoritmo foi escolhido entre as opções de algortimos supervisionados de regressão, algoritmos não supervisionados e algoritmos de reforço. Uma introdução a esse assuntos pode ser encontrada em [1]. Uma descrição sobre porque seria o ideal entre essas opções aplicar um algoritmo supervisionado de classificação está apresentada na seção 4.
 
 Ao longo do segundo bimestre, estudou-se quais linguagens se usaria para a ferramenta de inferface gráfica. Entre Java e Qt em C++, preferiu-se a última opção, tendo em vista que todo o restante de código da equipe ITAndroids está escrito em C++, inclusive outras ferramentas de interfaces gráficas, facilitando a integração e o suporte técnico. Para fins de simplificação do projeto, escolheu-se também utilizar de arquivos de texto (.txt) para armazenar os dados referentes às posições dos jogadores, oponentes e bola em campo, que serviriam de entrada para a inteligência. Dessa forma, nesse período foi iniciada a implementação da interface.
 
@@ -88,12 +88,12 @@ Por fim, no sexto bimestre, a rede neural de aprendizado supervionado foi desenv
 
 O sistema de marcação é um processo seqüencial usado para marcar jogadores oponentes que estão ofensivamente perigosos durante a partida. No contexto do futebol de robôs humanóides simulados, a marcação de oponentes pode ser muito crucial em uma partida, melhorando significantemente a defesa de um time. A marcação consiste no fato de se implementar um algoritmo que consiga utilizar o planejamento de trajetórias do robô de forma a dificultar que oponentes em situações de vantagem façam gols. Isso traz um desafio: decidir quais jogadores adversários estão em situação mais privilegiada em um determinado instante e deveriam ser marcados por agentes aliados. 
 
-Nesse projeto, trabalhou-se com os robôs da competição Soccer Simulation 3D (Soccer3D): uma competição que robôs humanóides competem uns contra os outros em uma simulação realista das regras e da física de um jogo de futebol [referência]. Cada time tem 11 jogadores: um goleiro e outros 10 que podem assumir posições dinâmicas, como zagueiro, atacante, etc., a critério de escolha de estratégia das equipes. A Figura \ref{fig:soccer3d-play} mostra uma cena de partida de Soccer3D (nesse exemplo, com apenas 9 jogadores em cada time).
+Nesse projeto, trabalhou-se com os robôs da competição Soccer Simulation 3D (Soccer3D): uma competição que robôs humanóides competem uns contra os outros em uma simulação realista das regras e da física de um jogo de futebol [2]. Cada time tem 11 jogadores: um goleiro e outros 10 que podem assumir posições dinâmicas, como zagueiro, atacante, etc., a critério de escolha de estratégia das equipes. A Figura \ref{fig:soccer3d-play} mostra uma cena de partida de Soccer3D (nesse exemplo, com apenas 9 jogadores em cada time).
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/soccer3d-play.png}
-   \caption{Um frame de uma partida de futebol simulado Soccer3D de 9 vs 9 jogadores.} \label{fig:soccer3d-play}
+   \caption{Um frame de uma partida de futebol simulado Soccer3D de 9 vs 9 jogadores [2].} \label{fig:soccer3d-play}
 \end{figure}
 
 As dimensões do campo de futebol são de 30 por 20 metros. Além disso, o campo é cercado por uma borda de 10 metros nas dimensões x e y, e o espaço além dessa área não é acessível para os jogadores. Uma representação do campo pode ser vista na Figura \ref{fig:soccer3d_field}.
@@ -101,25 +101,25 @@ As dimensões do campo de futebol são de 30 por 20 metros. Além disso, o campo
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/soccer3d-field.png}
-   \caption{Representação de um campo de futebol simulado para partidas de Soccer3D.} \label{fig:soccer3d_field}
+   \caption{Representação de um campo de futebol simulado para partidas de Soccer3D [2].} \label{fig:soccer3d_field}
 \end{figure}
 
-O modelo atual de robô utilizado nas competições é baseado no robô \textit{Nao}, da empresa \textit{Aldebaran Robotics} [referência], apresentado na Figura \ref{fig:nao_robot}. Esse robô possui 22 articulações para controlar o movimento de seu corpo, uma câmera direcional com campo de visão de 120 graus de largura na cabeça, e cabeça que pode girar em dois graus de liberdade, variando de -120 a 120 graus da esquerda para a direita e de -45 a 45 graus de baixo para cima.
+O modelo atual de robô utilizado nas competições é baseado no robô \textit{Nao}, da empresa \textit{Aldebaran Robotics}, apresentado na Figura \ref{fig:nao_robot}. Esse robô possui 22 articulações para controlar o movimento de seu corpo, uma câmera direcional com campo de visão de 120 graus de largura na cabeça, e cabeça que pode girar em dois graus de liberdade, variando de -120 a 120 graus da esquerda para a direita e de -45 a 45 graus de baixo para cima [3].
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{figures/nao-robot.jpg}
-   \caption{Robô \textit{Nao}, da empresa \textit{Aldebaran Robotics}.} \label{fig:nao_robot}
+   \caption{Robô \textit{Nao}, da empresa \textit{Aldebaran Robotics} [3].} \label{fig:nao_robot}
 \end{figure}
 
-As regras completas podem ser lidas em [referência]\cite{cbr2008}.
+As regras completas podem ser lidas em [4]\cite{cbr2008}.
 
-A competição utiliza o simulador \textit{Simspark} [referência] e o servidor \textit{Rcsserver3D} [referência] para simular tanto a física, quanto a partida entre os multiagentes robóticos. Os times (computadores \textit{clients}) se conectam ao computador servidor (\textit{server}) através de um \textit{agentproxy} chamdo \textit{MagmaProxy} [referência]. Os jogos são executados em \textit{Ubuntu 16.04} de 64 Bits e são exebidos na ferramenta de visualização e monitoramento \textit{Roboviz} (\textit{monitor}) [referência]. A Figura \ref{fig:computers-schema} a seguir mostra o esquema dessa comunicação.
+A competição utiliza o simulador \textit{Simspark} [5] e o servidor \textit{Rcsserver3D} [6] para simular tanto a física, quanto a partida entre os multiagentes robóticos. Os times (computadores \textit{clients}) se conectam ao computador servidor (\textit{server}) através de um \textit{agentproxy} chamdo \textit{MagmaProxy} [7]. Os jogos são executados em \textit{Ubuntu 16.04} de 64 Bits e são exebidos na ferramenta de visualização e monitoramento \textit{Roboviz} (\textit{monitor}) [8]. A Figura \ref{fig:computers-schema} a seguir mostra o esquema dessa comunicação.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/computers-schema.png}
-   \caption{Representação de como o software e hardware do ambiente da competição são utilizados. Existem dois computadores \textit{clients}, um para cada equipe, chamados \textit{client1} e \textit{client2}; um servidor; e um computador monitor (\textit{Roboviz}) [referência].} \label{fig:computers-schema}
+   \caption{Representação de como o software e hardware do ambiente da competição são utilizados. Existem dois computadores \textit{clients}, um para cada equipe, chamados \textit{client1} e \textit{client2}; um servidor; e um computador monitor (\textit{Roboviz}) [4].} \label{fig:computers-schema}
 \end{figure}
 
 A linguagem utilizada para o projeto da equipe ITAndroids foi C++, pois é uma linguagem que tem uma velocidade de execução alta e tem boa escalabilidade para um projeto grande.
@@ -136,7 +136,7 @@ Nessa seção, serão apresentados os resultados obtidos do estudo do problema, 
 
 \subsection{Sistema de Marcação Atual}
 
-Atualmente na ITAndroids, o sistema de marcação é responsável por decidir os jogadores que serão marcados, definir as funções para marcar esses jogadores e, por fim, usa o sistema de Atribuição de Funções (\textit{Role Assignment}) para designar agentes aliados para essas funções definidas.
+Atualmente na ITAndroids [9], o sistema de marcação é responsável por decidir os jogadores que serão marcados, definir as funções para marcar esses jogadores e, por fim, usa o sistema de Atribuição de Funções (\textit{Role Assignment}) para designar agentes aliados para essas funções definidas.
 
 No primeiro momento, para decidir quais oponentes serão marcados, um método heurístico é atualmente usado com base nas seguintes condições sobre o oponente, isto é, marca-se o oponente caso ele:
 
@@ -220,7 +220,7 @@ Dessa forma, a aparência da interface está como representada nas Figuras \ref{
 
 \subsubsection{Escolha do algoritmo}
 
-Aprendizado de máquina (ou \textit{Machine Learning}, em inglês), de forma simplificada, é um método de análise de dados que automatiza o processo de aprender a partir de dados de entrada, identificar padrões e tomar decisões com o mínimo de intervenção humana. Uma descrição mais detalhada dessa seção pode ser encontrada na referência [referência].
+Aprendizado de máquina (ou \textit{Machine Learning}, em inglês), de forma simplificada, é um método de análise de dados que automatiza o processo de aprender a partir de dados de entrada, identificar padrões e tomar decisões com o mínimo de intervenção humana. Uma descrição mais detalhada dessa seção pode ser encontrada na referência [1].
 
 Os métodos mais adotados de machine learning podem ser classificados em três grandes grupos, tendo em vista os tipos de dados de entrada da inteligência: aprendizado supervisionado, aprendizado não supervisionado ou  aprendizado por reforço. Em um aprendizado supervisionado, A inteligência tem acesso a informações como
 entradas e saídas esperadas, aprendendo como se por através de um "professor". O objetivo do método é encontrar a função que leva das entradas às saídas.
@@ -324,11 +324,11 @@ em 20-Janeiro-2019].
 \bibitem{ref9} ITAndroids, "Itandroids soccer3d team description paper 2019", \textit{RoboCup 2019}, vol.
 2, p. 7, 2019.
 
-\bibitem{ref10} N. View, \textit{What is machine learning with sap}, \url{https://www.nextview.nl/what-is-machine-learning-with-sap/}, [Online; acessado em 20-Fevereiro-2019].
+%\bibitem{ref10} N. View, \textit{What is machine learning with sap}, \url{https://www.nextview.nl/what-is-machine-learning-with-sap/}, [Online; acessado em 20-Fevereiro-2019].
 
 \end{thebibliography}
 
-\printbibliography
+%\printbibliography
 
 
 \end{document}
