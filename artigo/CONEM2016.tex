@@ -47,10 +47,8 @@
     \\
     \abstract{\textbf{Resumo:} Devido à alta dinamicidade existente nas partidas de futebol simulado de robôs humanoide, é fundamental possuir estratégias também dinâmicas para as mais diversas situações de jogo. Regras fixas de marcação de oponentes, por exemplo, podem ser simplistas, e não abranger satisfatoriamente esse grande número de situações. Nesse sentido, agregar conhecimento e percepções humanas de quem deveria ser marcado - para além dessas regras simples e fixas - pode ajudar a melhorar a defesa desse time em questão.
     
- ferramentas possuem a finalidade de fornecer uma visualização dos algoritmos envolvidos de forma clara para o usuário. Após uma fase de pesquisa, foi decidido utilizar o framework rqt, uma plataforma baseada em Qt que permite o desenvolvimento de interfaces gráficas para ROS (Robot Operational System), assim possibilitando criar um sistema de telemetria para o robô.
-
-Com este intuito, foram desenvolvidas três ferramentas iniciais. A primeira, feita antes da pesquisa sobre o framework rqt, foi escrita utilizando apenas a plataforma Qt. Ela é uma interface que permite anotar imagens e gerar tabelas de cores utilizando as funções de treinamento de redes neurais presentes no software MATLAB. A segunda utiliza o framework rqt e é uma ferramenta de teste e calibração do algoritmo de visão computacional do robô humanoide. A última ferramenta é um controle remoto do robô que permite variar a sua velocidade para facilitar a depuração do código.}\\
-    \keywords{\textbf{Palavras-chave:} palavra 1, palavra 2, palavra 3 (até 5) }\\
+Após uma fase de pesquisa, foi decidido utilizar Qt, uma framework para desenvolvimento de interfaces gráficas em C++, a fim de criar um sistema de aquisição de dados de conhecimento humano sistema para marcação de oponentes. Nessa interface, o usuário pode interagir com quadros da tela da partida fornecidos periodicamente, montando o dataset de oponentes marcáveis. Esses dados adquiridos alimentaram, então, um algoritmo de aprendizado supervisionado, uma rede neural implementado em Keras, framework para desenvolvimento de redes neurais em Python.}\\
+    \keywords{\textbf{Palavras-chave:} robótica, aprendizado supervisionado, interface gráfica, Qt, Keras. }\\
     \end{tabular}
     
 
