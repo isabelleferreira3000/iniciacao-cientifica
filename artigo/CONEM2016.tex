@@ -62,15 +62,15 @@ Após uma fase de pesquisa, foi decidido utilizar Qt, uma framework para desenvo
     
     Grande parte do projeto se trata da ferramenta de interface gráfica que vai captar o conhecimento humano e formar o dataset da inteligência artificial. O intuito é fazer um compilado das ideias inconscientes acerca de quais oponentes deveriam ser marcados, para posteriormente automatizar o processo por meio da inteligência artificial, indo além das condições heurísticas utilizadas atualmente no time da ITAndroids. 
     
-    Para resolver esse problema, então, foi feito a interface em Qt de C++. Nessa interface, o usuário pode interagir com quadros da tela da partida fornecidos periodicamente, clicando nos jogadores a serem marcados, montando, assim, o dataset de oponentes marcáveis.
+    Para resolver esse problema, então, foi feito a interface em Qt de C++ \citep{qtdoc}. Nessa interface, o usuário pode interagir com quadros da tela da partida fornecidos periodicamente, clicando nos jogadores a serem marcados, montando, assim, o dataset de oponentes marcáveis.
     
     \subsection{Rede Neural de Classificação com Aprendizado Supervisionado}
     
-    Os dados adquiridos a partir da interação do usuário - membro da ITAndroids - com a interface gráfica são intencionados a alimentar um algoritmo de classificação com aprendizado supervisionado, a fim de tentar automatizar esse processo de marcação com conhecimento humano. 
+    Os dados adquiridos a partir da interação do usuário - membro da ITAndroids - com a interface gráfica são intencionados a alimentar um algoritmo de classificação com aprendizado supervisionado \citep{kotsiantis2007supervised}, a fim de tentar automatizar esse processo de marcação com conhecimento humano. 
     
     Esse algoritmo foi escolhido dessa forma pela própria natureza do problema. Classifica-se cada um dos oponentes em dois tipos discretos (marcado ou não marcado), e a inteligência deve ser capaz de, para novas entradas (novas posições dos 22 jogadores e da bola, ainda sem classificação), vinculá-las a uma dessas classes pré-definidas. Isso é feito dando à inteligência acesso a informações como entradas e saídas esperadas, treinando-a como se por através de um "professor", objetivando-se encontrar a função que leva das entradas às saídas.
     
-    Na implementação dessa rede neural, foi utilizado a framework Keras, em Python, e, com essa rede, foi treinado um modelo de marcação.
+    Na implementação dessa rede neural, foi utilizado a framework Keras \citep{gulli2017deep}, em Python, e, com essa rede, foi treinado um modelo de marcação.
     
     Etapas importantes também inerentes a esse treinamento de modelo foram: pré-processamento dos dados provenientes da interface, geração de gráficos para análise das performances da rede e processamento dos resultados do algoritmo de aprendizado.
 
@@ -131,7 +131,7 @@ Pode visualizar a aparência da ferramenta de interface gráfica desenvolvida na
 	
 	Alguns exemplos dos resultados no dataset de teste foram apresentados a seguir.
 
-	Nas Figuras \ref{fig:frame507} e \ref{fig:frame459}, consegue-se perceber um funcionamento aceitável na escolha dos oponentes a serem marcados. Nota-se também que a rede desenvolveu uma tendência de se marcar poucos oponentes, o que não necessariamente é o desejado.
+	Nas Figuras \ref{fig:frame507} e \ref{fig:frame459}, consegue-se perceber um funcionamento aceitável na escolha dos oponentes a serem marcados. Nota-se também que a rede desenvolveu uma tendência de se marcar poucos oponentes, o que não necessariamente é o desejado. Na Figura \ref{fig:frame461}, por exemplo, pode-se perceber que essa escolha de se marcar poucos oponentes pode acabar sendo prejudicial em algumas situações de jogo.
 	
 \begin{figure}[H]
 	\centering
@@ -145,100 +145,38 @@ Pode visualizar a aparência da ferramenta de interface gráfica desenvolvida na
    \caption{\textbf{Exemplo de marcação satisfatória. Nota-se a tendência da rede de marcar poucos oponentes, uma vez que há outros oponentes em situação perigosa que não estão sendo marcados.}} \label{fig:frame459}
 \end{figure}
 
-Na Figura \ref{fig:frame461}, por exemplo, pode-se perceber que essa escolha de se marcar poucos oponentes pode acabar sendo prejudicial em algumas situações reais de jogo.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/frame461.png}
    \caption{\textbf{Exemplo de marcação não tão satisfatória, uma vez que apenas um oponente foi marcado, bastante próximo a outro também em posição perigosa.}} \label{fig:frame461}
 \end{figure}
 
-    \subsection{Títulos e Subtítulos das Seções }
-
-        Os títulos e subtítulos das seções devem ser digitados em fonte Times New Roman, tamanho 10, estilo negrito, e alinhados à esquerda. Os títulos das seções são com letras maiúsculas (Exemplo: \textbf{MODELO MATEMÁTICO}), enquanto os subtítulos só têm as primeiras letras maiúsculas (Exemplo: \textbf{Modelo Matemático}). Eles devem ser numerados, usando numerais arábicos separados por pontos, até o máximo de 3 subníveis. Uma linha em branco de espaçamento simples deve ser incluída acima e abaixo de cada título ou subtítulo.
-
-    \subsection{Corpo do Texto}
-
-        O corpo do texto é justificado e com espaçamento simples. A primeira linha de cada parágrafo tem recuo de 0,6 cm a partir da margem esquerda.
-
-        As equações matemáticas são alinhadas à esquerda com recuo de 0,6 cm.  Elas são referidas como "Eq. (1)" no meio de uma frase, ou "Equação (1)" quando usada no início de uma sentença. Os números das equações são numerais arábicos colocados entre parênteses, e alinhados à direita, como mostrado na Eq. (1).
-
-        Os símbolos usados nas equações devem ser definidos imediatamente antes ou depois de sua primeira ocorrência no texto. \citep{artigoMangaSBAI}
-
-        O tamanho da fonte usado nas equações deve ser compatível com o utilizado no texto. Todos as grandezas físicas devem ter suas unidades expressas no sistema S.I. (métrico).
-
-        \begin{equation}
-        \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} = 0 \label{equation1}
-        \end{equation}
-
-        As tabelas devem ser centralizadas. Elas são referidas por "Tab. 1" no meio de uma frase, ou por "Tabela 1" quando usada no início de uma sentença. A legenda deve ser centralizada e localizada imediatamente acima da tabela. Anotações e valores numéricos nela incluídos devem ter tamanhos compatíveis com o da fonte usada no texto do trabalho, e todas as unidades devem ser expressas no sistema S.I. (métrico). As unidades são incluídas apenas na primeira linha ou primeira coluna de cada tabela, conforme for apropriado. As tabelas devem ser colocadas tão perto quanto possível de sua primeira citação no texto. Uma linha em branco, em espaço simples, deve ser introduzida entre a tabela, seu título e o texto.
-
-        O estilo de borda da tabela é livre. As legendas das Figuras e das Tabelas não devem exceder 3 linhas.
-
-        \begin{table}[ht]
-            \begin{center}
-                \caption{\textbf{Resultados experimentais para as propriedades de flexão dos materiais MAT1 e MAT2. Valores médios obtidos em 20 ensaios.}}
-                    \begin{tabular}{|c|c|c|}
-                    \hline
-                    Propriedades do compósito       & CFRC-TWILL        & CFRC-4HS         \\
-                    \hline
-                    Resistência à Flexão  (MPa)     & 209$\pm$ 10       & 180 $\pm$  15    \\
-                    \hline
-                    Módulo de Flexão  (GPa)         & 57.0 $\pm$ 2.8    & 18.0 $\pm$  1.3  \\
-                    \hline
-                    \end{tabular}
-            \end{center}
-        \end{table}
-
-        As figuras deve ser centralizadas. Elas são referenciadas por "Fig. 1" no meio de uma frase ou por "Figura 1" quando usada no início de uma sentença. Sua legenda deve ser centralizada e localizada imediatamente abaixo da figura. As anotações e numerações devem tem tamanhos compatíveis com o da fonte usada no texto, e todas as unidades devem ser expressas no sistema S.I. (métrico). As figuras devem ser colocadas o mais próximo possível de sua primeira citação no texto. Deve ser deixada uma linha em branco, de espaçamento simples, entre as figuras e o texto.
+    \section{CONCLUSÕES}
     
-        \begin{figure}[h]
-            \begin{center}
-                \includegraphics[angle=0, scale=.8]{figura.pdf}
-            \end{center}
-            \caption{\textbf{Comparação entre os resultados do presente modelo com os resultados experimentais de Wirtz e Stutzman (1982).}}
-        \end{figure}
+    O framework Qt é excelente para a criação rápida de ferramentas de interface com o usuário. Esta ferramenta inicial criada agora poderá ser aprimorada ou servir de modelo para a criação de mais ferramentas no futuro.
+    
+    A seleção da estrutura a ser usada na rede neural e a sua implementação também se mostraram interessantes. Foi possível a partir dela analisar os resultados da estrutura implementada com os dados gerados pela interface, conforme foi apresentado anteriormente.
 
-        Figuras coloridas e fotografias de alta qualidade podem ser incluídas no trabalho. Para reduzir o tamanho do arquivo e preservar a resolução gráfica, os arquivos das imagens devem ser convertidos para o  formato GIFF (para figuras com até 16 cores) ou para o formato JPEG (alta densidade de cores), antes de serem inseridos no trabalho.
+	Pode-se ainda aprimorar a inteligência, a partir da aquisição de mais dataset, por exemplo, ou revisão do atualmente desenvolvido. A forma como está atualmente implementado possibilita essa posterior melhoria, conforme se perceba a
+necessidade.
 
-        A citação das referências no corpo do texto pode ser feita nos formatos: "\citet{Bordalo89} mostra que o corpo...", ou: "Vários trabalhos (\citeauthor{Coimbra78}, \citeyear{Coimbra78}; \citeauthor{Clark86}, \citeyear{Clark86} e \citeauthor{Sparrow80},  \citeyear{Sparrow80}) mostram que a rigidez...".
-
-        
-         %   \citet{key} ==>>                Jones et al. (1990)
-         %   \citet*{key} ==>>               Jones, Baker, and Smith (1990)
-         %   \citep{key} ==>>                (Jones et al., 1990)
-         %   \citep*{key} ==>>               (Jones, Baker, and Smith, 1990)
-         %   \citep[chap. 2]{key} ==>>       (Jones et al., 1990, chap. 2)
-         %   \citep[e.g.][]{key} ==>>        (e.g. Jones et al., 1990)
-         %   \citep[e.g.][p. 32]{key} ==>>   (e.g. Jones et al., p. 32)
-         %   \citeauthor{key} ==>>           Jones et al.
-         %   \citeauthor*{key} ==>>          Jones, Baker, and Smith
-         %   \citeyear{key} ==>>             1990
-        
-        Referências aceitas incluem: artigos de periódicos, dissertações, teses, artigos publicados em anais de congressos, livros, comunicações privadas e artigos submetidos e aceitos (com fonte identificada) e citações a páginas da internet.
-
-        A lista de referências deve ser uma seção específica denominada Referências, localizada no fim do artigo.
-
-        A primeira linha de cada referência deve ser alinhada à esquerda; todas as outras linhas têm recuo de 0,6 cm da margem esquerda. Todas as referências incluídas na lista devem aparecer como citações no texto do trabalho.
-
-        As referências devem ser postas em ordem alfabética, usando o último nome do primeiro autor, seguida do ano da publicação. Exemplo da lista de referências é apresentado abaixo.
-
+	Outras sugestões de melhorias são, também, a elaboração de scripts mais compactados ou simplificados para se executar o projeto do início (desde a captura dos quadros de partidas reais e elaboração de arquivos de entrada da interface) até o final (considerando o pré-processamento de dados adquiridos, treino da rede, aplicação do modelo em um dataset de treino, de validação cruzada e de teste).
+	
+	É essencial para a progressão do time a aplicação dessa estratégia desenvolvida no código da ITAndroids, para verificar os resultados dessas mudanças também em partidas reais com times adversários.
 
     \section{AGRADECIMENTOS}
     
-        Se houver, esta seção deve ser colocada antes da lista de referências.
+	Ao CNPq, pelo apoio financeiro e motivacional.
+
+	À ITAndroids, equipe que representa o ITA na competição da LARC/CBR e Robocup, pela ideia do projeto, pela oportunidade de aplicação dos métodos estudados.
+	
+	Ao professor Edgar Yano, meu orientador, e ao mestre Luckeciano Carvalho Melo, co-orientador, da Divisão da Ciência da Computação do ITA e do LabSCA, respectivamente, pelo apoio nos estudos e no desenvolvimento do projeto.
 
 
     % REFERÊNCIAS
     \section{REFERÊNCIAS}
         \bibliographystyle{abcm}
         \bibliography{bibliografia}
-
-    \section{RESPONSABILIDADE AUTORAIS}
-
-        Os trabalhos escritos em português ou espanhol devem incluir (após direitos autorais) título, os nomes dos autores e afiliações, o resumo e as palavras chave, traduzidos para o inglês e a declaração a seguir, devidamente adaptada para o número de autores.
-    
-        O(s) autor(es) é(são) o(s) único(s) responsável(is) pelo conteúdo deste trabalho.
 
 % % RESUMO EM INGLES
 %
