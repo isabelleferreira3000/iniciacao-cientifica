@@ -1,6 +1,7 @@
 % MODELO CONEM 2016
 \documentclass[10pt,fleqn,a4paper]{article}
 \usepackage{abcm}
+\usepackage{float}
 \begin{document}
     
     % CABEÇALHO
@@ -73,7 +74,40 @@ Após uma fase de pesquisa, foi decidido utilizar Qt, uma framework para desenvo
     
     Etapas importantes também inerentes a esse treinamento de modelo foram: pré-processamento dos dados provenientes da interface, geração de gráficos para análise das performances da rede e processamento dos resultados do algoritmo de aprendizado.
 
-    \section{FORMATO DO TEXTO}
+    \section{RESULTADOS OBTIDOS}
+    
+    Todas as ferramentas foram desenvolvidas com sucesso.
+    
+    \subsection{Interface Gráfica de Aquisição de Conhecimento Humano}
+    
+    Com o uso da plataforma Qt, foi desenvolvida esta ferramenta.
+    
+    Ela utiliza arquivos de texto (.txt) como entrada e gera como saída alterações nesse mesmo aquivo de texto. Esses arquivos apresentam as posições dos 22 jogadores e da bola, além de um vetor de zeros e uns (1 para oponente marcado e 0 para não marcado). A Figura \ref{fig:arquivo-de-entrada} trata-se de um desses arquivos.
+    
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{figures/arquivo-de-entrada.png}
+\caption{\textbf{Arquivo de entrada da interface. No exemplo, esse arquivo se trata do 32º frame analisado.}} \label{fig:arquivo-de-entrada}
+\end{figure}
+    
+    A interação na interface se dá clicando no oponente a ser marcado, o que automaticamente altera o vetor de 0s e 1s do arquivo de entrada, além da coloração do jogador (de vermelho para verde) para fins de visualização. A ferramenta também possui quatro botões:
+    
+\begin{itemize}
+\item prevFrame: Apresenta a visualização do frame anterior.
+\item nextFrame: Apresenta a visualização do frame seguinte.
+\item unmarkAll: Desmarca todos os oponentes do frame atual.
+\item confirm: Atualiza o arquivo de entrada para o caso de o usuário ter desmarcado todos os oponentes.
+\end{itemize}
+
+Pode visualizar a aparência da ferramenta de interface gráfica desenvolvida na Figura \ref{fig:exemplo-interface}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/exemplo-interface.png}
+\caption{\textbf{Aparência da ferramenta de interface gráfica, com alguns oponentes marcados. Jogadores aliados são azuis, oponentes são vermelhos e passam a ser verdes caso sejam marcados. A bola é rosa. No exemplo, esse arquivo se trata do 14º frame analisado.}} \label{fig:exemplo-interface}
+\end{figure}
+    
+    \subsection{Rede Neural de Classificação com Aprendizado Supervisionado}
         
         O artigo deve ser digitado em papel tamanho A4, usando fonte Times New Roman, tamanho 10, exceto para o título, nomes dos autores, instituição, endereço, resumo e palavras-chave, que têm formatações específicas indicadas acima. Espaço simples entre linhas deve ser usado ao longo do texto.
 
