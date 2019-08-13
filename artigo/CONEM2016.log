@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  13 AUG 2019 11:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  13 AUG 2019 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,7 +616,7 @@ File: figures/arquivo-de-entrada.png Graphic file (type png)
 
 <use figures/arquivo-de-entrada.png>
 Package pdftex.def Info: figures/arquivo-de-entrada.png used on input line 89.
-(pdftex.def)             Requested size: 144.99815pt x 197.24826pt.
+(pdftex.def)             Requested size: 193.32594pt x 262.99236pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 96.
@@ -634,39 +634,73 @@ File: figures/exemplo-interface.png Graphic file (type png)
 Package pdftex.def Info: figures/exemplo-interface.png used on input line 106.
 (pdftex.def)             Requested size: 289.9963pt x 218.94978pt.
  [2 <./figures/arquivo-de-entrada.png>]
-[3 <./figures/exemplo-interface.png>]
-<figura.pdf, id=20, 291.3562pt x 198.7425pt>
+<figures/model-summary.jpeg, id=16, 531.9875pt x 200.75pt>
+File: figures/model-summary.jpeg Graphic file (type jpg)
+
+<use figures/model-summary.jpeg>
+Package pdftex.def Info: figures/model-summary.jpeg used on input line 118.
+(pdftex.def)             Requested size: 241.66113pt x 91.19128pt.
+
+<figures/model-accuracy-loss.png, id=17, 2230.3325pt x 996.72375pt>
+File: figures/model-accuracy-loss.png Graphic file (type png)
+
+<use figures/model-accuracy-loss.png>
+Package pdftex.def Info: figures/model-accuracy-loss.png used on input line 128
+.
+(pdftex.def)             Requested size: 483.32227pt x 215.99481pt.
+ [3 <./figures/exemplo-interface.png> <./figures/model-summary.jpeg>]
+<figures/frame507.png, id=22, 997.7275pt x 751.80875pt>
+File: figures/frame507.png Graphic file (type png)
+
+<use figures/frame507.png>
+Package pdftex.def Info: figures/frame507.png used on input line 138.
+(pdftex.def)             Requested size: 289.9963pt x 218.51222pt.
+
+<figures/frame459.png, id=23, 999.735pt x 744.7825pt>
+File: figures/frame459.png Graphic file (type png)
+
+<use figures/frame459.png>
+Package pdftex.def Info: figures/frame459.png used on input line 144.
+(pdftex.def)             Requested size: 289.9963pt x 216.03821pt.
+ [4 <./figures/model-accuracy-loss.png> <./figures/frame507.png>] <figures/fram
+e461.png, id=28, 1007.765pt x 760.8425pt>
+File: figures/frame461.png Graphic file (type png)
+
+<use figures/frame461.png>
+Package pdftex.def Info: figures/frame461.png used on input line 152.
+(pdftex.def)             Requested size: 289.9963pt x 218.94368pt.
+ [5 <./figures/frame459.png> <./figures/frame461.png>] <figura.pdf, id=32, 291.
+3562pt x 198.7425pt>
 File: figura.pdf Graphic file (type pdf)
  <use figura.pdf>
-Package pdftex.def Info: figura.pdf used on input line 170.
+Package pdftex.def Info: figura.pdf used on input line 197.
 (pdftex.def)             Requested size: 291.35548pt x 198.742pt.
- [4 <./figura.pdf>] (./CONEM2016.bbl
+ [6 <./figura.pdf>] (./CONEM2016.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 20.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-))
-[5] (./CONEM2016.aux) ) 
+)) [7] (./CONEM2016.aux) ) 
 Here is how much of TeX's memory you used:
- 3729 strings out of 493029
- 48410 string characters out of 6136235
- 127232 words of memory out of 5000000
- 7176 multiletter control sequences out of 15000+600000
+ 3760 strings out of 493029
+ 49129 string characters out of 6136235
+ 127272 words of memory out of 5000000
+ 7201 multiletter control sequences out of 15000+600000
  26137 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,45p,772b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.e
-nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CONEM2016.pdf (5 pages, 179247 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on CONEM2016.pdf (7 pages, 358656 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

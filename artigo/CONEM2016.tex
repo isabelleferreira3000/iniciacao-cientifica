@@ -86,7 +86,7 @@ Após uma fase de pesquisa, foi decidido utilizar Qt, uma framework para desenvo
     
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.3\textwidth]{figures/arquivo-de-entrada.png}
+\includegraphics[width=0.4\textwidth]{figures/arquivo-de-entrada.png}
 \caption{\textbf{Arquivo de entrada da interface. No exemplo, esse arquivo se trata do 32º frame analisado.}} \label{fig:arquivo-de-entrada}
 \end{figure}
     
@@ -109,22 +109,49 @@ Pode visualizar a aparência da ferramenta de interface gráfica desenvolvida na
     
     \subsection{Rede Neural de Classificação com Aprendizado Supervisionado}
     
-    O framework utilizado para escrever a rede neural foi Keras, uma biblioteca de rede neural de código aberto escrita em Python. Keras foi escolhido por ser fácil de usar, ser modular e extensível, oferecendo um conjunto de abstrações de nível mais intuitivo, o que facilita o desenvolvimento de modelos de aprendizagem, até mesmo para deep learning \citep{whykeras}.
+    O framework utilizado para escrever a rede neural foi Keras, uma biblioteca de rede neural de código aberto escrita em Python. Keras foi escolhido por ser fácil de usar, moduláveç e extensível, oferecendo um conjunto de abstrações de nível mais intuitivo, o que facilita o desenvolvimento de modelos de aprendizagem, até mesmo para deep learning \citep{whykeras}.
     
-    podendo ser utilizado para testes em tempo real utilizando o robô ou com dados coletados reproduzidos posteriormente.
-        
-        O artigo deve ser digitado em papel tamanho A4, usando fonte Times New Roman, tamanho 10, exceto para o título, nomes dos autores, instituição, endereço, resumo e palavras-chave, que têm formatações específicas indicadas acima. Espaço simples entre linhas deve ser usado ao longo do texto.
+    A implementação do modelo foi feita, então, em Keras, e uma representação resumida do seu modelo foi apresentado na Figura \ref{fig:model-summary}. Esse resumo é o produzido através da chamada do método model.summary(), fornecido pela própria framework Keras. A rede consiste de 3 camadas escondidas: as duas primeiras com 64 neurônios e a última com 11 neurônios, referente as informações dos 11 jogadores oponentes (se eles devem ser marcados, ou não). A função de ativação utilizada foi a tangente hiperbólica para as duas primeiras camadas escondidas e sigmoide para a última.
+    
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/model-summary.jpeg}
+\caption{\textbf{Resumo do modelo implentado utilizando Keras, em Python.}} \label{fig:model-summary}
+\end{figure}
 
-        O corpo de texto que contém o título deve ser centralizado, em parágrafo com recuo esquerdo de 0,1 cm e marcado com borda esquerda de largura 2$\frac{1}{4}$ pontos.
+	Utilizou-se inicialmente um dataset de 500 frames, referentes a mais de 4 horas seguidas de partida. Esse dataset foi gerado conforme explicado anteriormente, a partir de conhecimento humano. Desse conjunto de frames, 300 (60\% do total) foram escolhidos para o treinamento da rede, 100 (20\% do total) para set de validação cruzada. Já os últimos 100 (20\% do total), foram escolhidos para o teste propriamente dito, ou seja, um dataset de entradas novas, as quais a rede jamais havia tido contato anteriormente. O treino da rede obteve um modelo com acurácia de 89.15\% no dataset de treino, 85.57\% no dataset de validação cruzada, e 86.92\% no dataset de teste.
+	
+	A evolução da acurácia e valor de custo com o passar das épocas foram apresentadas na Figura \ref{fig:acc-loss}. A partir dessas figuras, pode-se notar a convergência desses valores.
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/model-accuracy-loss.png}
+   \caption{\textbf{Acurácia e função de custo, da esquerda para direita, do modelo com o passar das épocas.}} \label{fig:acc-loss}
+\end{figure}
+	
+	Alguns exemplos dos resultados no dataset de teste foram apresentados a seguir.
 
-        O corpo de texto que contém os nomes de autores e de instituições devem ser alinhados à esquerda, em parágrafo com recuo esquerdo de 0,1 cm e marcados com borda esquerda de largura 2 $\frac{1}{4}$ pontos.
+	Nas Figuras \ref{fig:frame507} e \ref{fig:frame459}, consegue-se perceber um funcionamento aceitável na escolha dos oponentes a serem marcados. Nota-se também que a rede desenvolveu uma tendência de se marcar poucos oponentes, o que não necessariamente é o desejado.
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/frame507.png}
+   \caption{\textbf{Exemplo de correta marcação. Para bola presente muito à direita, no lado atacante do campo, é entendido que não se tem necessidade de marcar oponentes.}} \label{fig:frame507}
+\end{figure}
 
-        A primeira página deve ter margem superior igual a 5 cm, e todas as outras margens (esquerda, direita e inferior) iguais a 2 cm. Todas as demais páginas do trabalho devem ter todas as suas margens iguais a 2 cm.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/frame459.png}
+   \caption{\textbf{Exemplo de marcação satisfatória. Nota-se a tendência da rede de marcar poucos oponentes, uma vez que há outros oponentes em situação perigosa que não estão sendo marcados.}} \label{fig:frame459}
+\end{figure}
 
-        \textbf{\textcolor[rgb]{0.98,0.00,0.00}{NÃO NUMERAR AS PÁGINAS.}}
+Na Figura \ref{fig:frame461}, por exemplo, pode-se perceber que essa escolha de se marcar poucos oponentes pode acabar sendo prejudicial em algumas situações reais de jogo.
 
-        \textbf{\textcolor[rgb]{1.00,0.00,0.00}{QUANDO SUBMETER O TRABALHO PELA PRIMEIRA VEZ EM PDF, OS NOMES DOS AUTORES E AFILIAÇÕES DEVEM SER SUPRIMIDOS. INCLUA APENAS O CÓDIGO DO RESUMO, O QUAL FOI FORNECIDO NO E-MAIL DE ACEITAÇÃO DO SEU RESUMO, MANTENDO O ESPAÇO ORIGINAL DESTINADO AOS NOMES DOS AUTORES E AFILIAÇÃO.}}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/frame461.png}
+   \caption{\textbf{Exemplo de marcação não tão satisfatória, uma vez que apenas um oponente foi marcado, bastante próximo a outro também em posição perigosa.}} \label{fig:frame461}
+\end{figure}
 
     \subsection{Títulos e Subtítulos das Seções }
 
