@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -13,6 +13,11 @@ Bordalo, S.N., Ferziger, J.H. and Kline, S.J., 1989.
 \newblock \enquote{The development of zonal models for turbulence}.
 \newblock In \emph{Proceedings of the 10th Brazilian Congress of Mechanical
   Engineering}. ABCM, Rio de Janeiro, Brazil, Vol.~1, pp. 41--44.
+
+\bibitem[{Chollet \emph{et~al.}(2015)}]{whykeras}
+Chollet, F. \emph{et~al.}, 2015.
+\newblock \emph{Keras Documentation: Why use Keras?}
+\newblock \urlprefix\url{https://keras.io/why-use-keras/}.
 
 \bibitem[{Clark(1986)}]{Clark86}
 Clark, J.A., 1986.

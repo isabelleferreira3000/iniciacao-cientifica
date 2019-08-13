@@ -1,6 +1,50 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: CONEM2016.aux
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: CONEM2016.aux
 The style file: abcm.bst
 Database file #1: bibliografia.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty title in Clark86
 Warning--empty title in artigoMangaSBAI
+You've used 6 entries,
+            3271 wiz_defined-function locations,
+            699 strings with 5950 characters,
+and the built_in function-call counts, 3236 in all, are:
+= -- 255
+> -- 84
+< -- 9
++ -- 35
+- -- 27
+* -- 188
+:= -- 485
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 38
+chr.to.int$ -- 6
+cite$ -- 8
+duplicate$ -- 283
+empty$ -- 274
+format.name$ -- 38
+if$ -- 657
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 58
+newline$ -- 39
+num.names$ -- 24
+pop$ -- 138
+preamble$ -- 1
+purify$ -- 32
+quote$ -- 0
+skip$ -- 117
+stack$ -- 0
+substring$ -- 118
+swap$ -- 132
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 51
+warning$ -- 2
+while$ -- 22
+width$ -- 0
+write$ -- 85
 (There were 2 warnings)
