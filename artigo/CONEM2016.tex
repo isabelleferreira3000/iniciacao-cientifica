@@ -48,21 +48,23 @@
     \\
     \abstract{\textbf{Resumo:} Devido à alta dinamicidade existente nas partidas de futebol simulado de robôs humanoide, é fundamental possuir estratégias também dinâmicas para as mais diversas situações de jogo. Nesse sentido, agregar conhecimento e percepções humanas de qual oponente está em uma posição perigosa e deveria ser marcado - para além dessas regras simples e fixas - pode ajudar a melhorar a defesa desse time em questão.
     
-Após uma fase de pesquisa, foi decidido utilizar Qt, uma framework para desenvolvimento de interfaces gráficas em C++, a fim de criar um sistema de aquisição de dados de conhecimento humano sistema para marcação de oponentes. Nessa interface, o usuário pode interagir com quadros da tela da partida fornecidos periodicamente, montando o dataset de oponentes marcáveis. Esses dados adquiridos alimentaram, então, um algoritmo de aprendizado supervisionado, uma rede neural implementado em Keras, framework para desenvolvimento de redes neurais em Python, treinando, por fim, um modelo de marcação.}\\
+Após uma fase de pesquisa, decidiu-se utilizar Qt, uma framework para desenvolvimento de interfaces gráficas em C++, a fim de criar um sistema de aquisição de dados a partir de conhecimento humano para marcação de oponentes. Nessa interface, o usuário pode interagir com quadros da tela da partida fornecidos periodicamente, montando o dataset de oponentes marcáveis. Esses dados adquiridos alimentaram, então, um algoritmo de aprendizado supervisionado, uma rede neural implementado em Keras, framework para desenvolvimento de redes neurais em Python, treinando, por fim, um modelo de marcação.}\\
     \keywords{\textbf{Palavras-chave:} robótica, aprendizado supervisionado, interface gráfica, Qt, Keras. }\\
     \end{tabular}
     
 
     \section{INTRODUÇÃO}
-    A ITAndroids é uma equipe de alunos do ITA, supervisionada por um professor, que participa de diversas competições de robótica nacionais e internacionais. Uma das categorias em que a ITAndroids participa é a do robô humanoide simulado, que consiste em desenvolver um time de robôs simulados capazes de jogar futebol. Esta tarefa envolve uma série de desafios complexos que variam desde a movimentação do robô até a sua tomada de decisões.
+    A ITAndroids um grupo de pesquisa em robótica composto por alunos de graduação e pós-graduação do ITA, que participa de diversas competições de robótica nacionais e internacionais. Uma das categorias em que a ITAndroids participa é a \textit{RoboCup 3D Soccer Simulation}, que consiste em desenvolver um time de robôs simulados capazes de jogar futebol. Esta tarefa envolve uma série de desafios complexos que variam desde a movimentação do robô até a sua tomada de decisões.
     
-    Nesse sentido de estratégia e tomada de decisões, tem-se a questão de marcação de oponentes que estejam ofensivamente perigosos durante a partida. No futebol de robôs humanóides simulados, a marcação de oponentes pode ser muito crucial em uma partida, melhorando significantemente a defesa de um time. Essa marcação consiste em implementar um algoritmo que consiga utilizar o planejamento de trajetórias do robô de forma a dificultar que oponentes em situações de vantagem façam gols. Isso traz um desafio: decidir quais são esses jogadores adversários que estão em situação mais privilegiada em um determinado instante e deveriam ser marcados por agentes aliados. 
+    Nesse sentido de estratégia e tomada de decisões, tem-se a questão de marcação de oponentes que estejam ofensivamente perigosos durante a partida. No futebol de robôs humanóides simulados, a marcação de oponentes pode ser muito crucial em uma partida, melhorando significantemente a defesa de um time. Essa marcação consiste em implementar um algoritmo que consiga utilizar sistema de posicionamento e \textit{role assignment} do robô de forma a dificultar que oponentes em situações de vantagem façam gols. Isso traz um desafio: decidir quais são esses jogadores adversários que estão em situação mais privilegiada em um determinado instante e deveriam ser marcados por agentes aliados. 
+    
+    Diante de tal problemática, este trabalho objetiva a implementação de um sistema de marcação usando aprendizado de máquina guiado por conhecimento humano. Pra isso, criou-se uma ferramenta gráfica para aquisição e anotação de dados, guiado por conhecimento humano, ferramenta essa na qual o usuário pudesse escolher manualmente quais jogadores devessem ou não ser marcados. Por fim, projetou-se uma rede neural com o objetivo de aprender as situações de marcação, baseado no posicionamento dos agentes e utilizando-se do conhecimento humano proveniente das anotações como entrada para um algoritmo de classificação poor aprendizado supervisionado.
     
     \subsection{Interface Gráfica de Aquisição de Conhecimento Humano}
     
     Grande parte do projeto se trata da ferramenta de interface gráfica que vai captar o conhecimento humano e formar o dataset da inteligência artificial. O intuito é fazer um compilado das ideias inconscientes acerca de quais oponentes deveriam ser marcados, para posteriormente automatizar o processo por meio da inteligência artificial, indo além das condições heurísticas utilizadas atualmente no time da ITAndroids. 
     
-    Para resolver esse problema, então, foi feito a interface em Qt de C++ \citep{qtdoc}. Nessa interface, o usuário pode interagir com quadros da tela da partida fornecidos periodicamente, clicando nos jogadores a serem marcados, montando, assim, o dataset de oponentes marcáveis.
+    Para resolver esse problema, então, implementou-se a interface em Qt de C++ \citep{qtdoc}. Nessa interface, o usuário pode interagir com quadros da tela da partida fornecidos periodicamente, clicando nos jogadores a serem marcados, montando, assim, o dataset de oponentes marcáveis.
     
     \subsection{Rede Neural de Classificação com Aprendizado Supervisionado}
     
@@ -70,19 +72,17 @@ Após uma fase de pesquisa, foi decidido utilizar Qt, uma framework para desenvo
     
     Esse algoritmo foi escolhido dessa forma pela própria natureza do problema. Classifica-se cada um dos oponentes em dois tipos discretos (marcado ou não marcado), e a inteligência deve ser capaz de, para novas entradas (novas posições dos 22 jogadores e da bola, ainda sem classificação), vinculá-las a uma dessas classes pré-definidas. Isso é feito dando à inteligência acesso a informações como entradas e saídas esperadas, treinando-a como se por através de um "professor", objetivando-se encontrar a função que leva das entradas às saídas.
     
-    Na implementação dessa rede neural, foi utilizado a framework Keras \citep{gulli2017deep}, em Python, e, com essa rede, foi treinado um modelo de marcação.
+    Na implementação dessa rede neural, utilizou-se a framework Keras \citep{gulli2017deep}, em Python, e, com essa rede, treinou-se um modelo de marcação.
     
     Etapas importantes também inerentes a esse treinamento de modelo foram: pré-processamento dos dados provenientes da interface, geração de gráficos para análise das performances da rede e processamento dos resultados do algoritmo de aprendizado.
 
     \section{RESULTADOS OBTIDOS}
     
-    Todas as ferramentas foram desenvolvidas com sucesso.
+    Nesta seção, apresentaremos as ferramentas desenvolvidas neste trabalho, ou seja, tanto a interface gráfica para aquisição de dados quanto a rede neural de classificação por aprendizado supervisionado. Todas as ferramentas foram desenvolvidas com sucesso, conforme apresentado a seguir.
     
     \subsection{Interface Gráfica de Aquisição de Conhecimento Humano}
     
-    Com o uso da plataforma Qt, foi desenvolvida esta ferramenta.
-    
-    Ela utiliza arquivos de texto (.txt) como entrada e gera como saída alterações nesse mesmo aquivo de texto. Esses arquivos apresentam as posições dos 22 jogadores e da bola, além de um vetor de zeros e uns (1 para oponente marcado e 0 para não marcado). A Figura \ref{fig:arquivo-de-entrada} trata-se de um desses arquivos.
+    A ferramenta gráfica, desenvolvida com uso da plataforma Qt, utiliza arquivos de texto (.txt) como entrada e gera como saída alterações nesse mesmo aquivo de texto. Esses arquivos apresentam as posições dos 22 jogadores e da bola, além de um vetor de zeros e uns (1 para oponente marcado e 0 para não marcado). A Figura \ref{fig:arquivo-de-entrada} apresenta um desses arquivos.
     
 \begin{figure}[H]
 \centering
@@ -99,7 +99,7 @@ Após uma fase de pesquisa, foi decidido utilizar Qt, uma framework para desenvo
 \item confirm: Atualiza o arquivo de entrada para o caso de o usuário ter desmarcado todos os oponentes.
 \end{itemize}
 
-Pode visualizar a aparência da ferramenta de interface gráfica desenvolvida na Figura \ref{fig:exemplo-interface}.
+A Figura \ref{fig:exemplo-interface} apresenta a ferramenta de interface gráfica desenvolvida.
 
 \begin{figure}
 \centering
@@ -109,9 +109,9 @@ Pode visualizar a aparência da ferramenta de interface gráfica desenvolvida na
     
     \subsection{Rede Neural de Classificação com Aprendizado Supervisionado}
     
-    O framework utilizado para escrever a rede neural foi Keras, uma biblioteca de rede neural de código aberto escrita em Python. Keras foi escolhido por ser fácil de usar, moduláveç e extensível, oferecendo um conjunto de abstrações de nível mais intuitivo, o que facilita o desenvolvimento de modelos de aprendizagem, até mesmo para deep learning \citep{whykeras}.
+    O framework utilizado para escrever a rede neural foi Keras, uma biblioteca de rede neural de código aberto escrita em Python. Keras foi escolhido por ser fácil de usar, modularizado e extensível, oferecendo um conjunto de abstrações de nível mais intuitivo, o que facilita o desenvolvimento de modelos de aprendizagem, até mesmo para deep learning \citep{whykeras}.
     
-    A implementação do modelo foi feita, então, em Keras, e uma representação resumida do seu modelo foi apresentado na Figura \ref{fig:model-summary}. Esse resumo é o produzido através da chamada do método model.summary(), fornecido pela própria framework Keras. A rede consiste de 3 camadas escondidas: as duas primeiras com 64 neurônios e a última com 11 neurônios, referente as informações dos 11 jogadores oponentes (se eles devem ser marcados, ou não). A função de ativação utilizada foi a tangente hiperbólica para as duas primeiras camadas escondidas e sigmoide para a última.
+    Implementou-se um modelo neural, em Keras, cuja representação resumida pode ser vista na Figura \ref{fig:model-summary}. Esse resumo é produzido através da chamada do método model.summary(), fornecido pela própria framework Keras. A rede consiste de duas camadas ocultas e uma camada de saída: as duas primeiras com 64 neurônios e a última com 11 neurônios, referente as informações dos 11 jogadores oponentes (se eles devem ser marcados, ou não). A função de ativação utilizada foi a tangente hiperbólica para as duas primeiras camadas escondidas e sigmoide para a última.
     
 \begin{figure}[H]
 \centering
@@ -133,10 +133,12 @@ Pode visualizar a aparência da ferramenta de interface gráfica desenvolvida na
 
 	Nas Figuras \ref{fig:frame507} e \ref{fig:frame459}, consegue-se perceber um funcionamento aceitável na escolha dos oponentes a serem marcados. Nota-se também que a rede desenvolveu uma tendência de se marcar poucos oponentes, o que não necessariamente é o desejado. Na Figura \ref{fig:frame461}, por exemplo, pode-se perceber que essa escolha de se marcar poucos oponentes pode acabar sendo prejudicial em algumas situações de jogo.
 	
+	Acredita-se que isto é reflexo dos dados: o usuário da interface pode ter tendido a colocar poucos marcadores nos frames, ou o dataset pode ser curto demais pra generalizar pra todas as situações de jogo. 
+	
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/frame507.png}
-   \caption{\textbf{Exemplo de correta marcação. Para bola presente muito à direita, no lado atacante do campo, é entendido que não se tem necessidade de marcar oponentes.}} \label{fig:frame507}
+   \caption{\textbf{Exemplo de correta marcação. Para bola presente muito à direita, no lado atacante do campo, entende-se que não se tem necessidade de marcar oponentes.}} \label{fig:frame507}
 \end{figure}
 
 \begin{figure}[H]

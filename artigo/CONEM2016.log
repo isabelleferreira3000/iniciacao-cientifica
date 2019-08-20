@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  13 AUG 2019 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.3.6)  20 AUG 2019 10:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -619,6 +619,7 @@ Package pdftex.def Info: figures/arquivo-de-entrada.png used on input line 89.
 (pdftex.def)             Requested size: 193.32594pt x 262.99236pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+ [2 <./figures/arquivo-de-entrada.png>]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 96.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
@@ -627,21 +628,21 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
 
-<figures/exemplo-interface.png, id=11, 999.735pt x 754.82pt>
+<figures/exemplo-interface.png, id=14, 999.735pt x 754.82pt>
 File: figures/exemplo-interface.png Graphic file (type png)
 
 <use figures/exemplo-interface.png>
 Package pdftex.def Info: figures/exemplo-interface.png used on input line 106.
 (pdftex.def)             Requested size: 289.9963pt x 218.94978pt.
- [2 <./figures/arquivo-de-entrada.png>]
-<figures/model-summary.jpeg, id=16, 531.9875pt x 200.75pt>
+
+<figures/model-summary.jpeg, id=15, 531.9875pt x 200.75pt>
 File: figures/model-summary.jpeg Graphic file (type jpg)
 
 <use figures/model-summary.jpeg>
 Package pdftex.def Info: figures/model-summary.jpeg used on input line 118.
 (pdftex.def)             Requested size: 241.66113pt x 91.19128pt.
-
-<figures/model-accuracy-loss.png, id=17, 2230.3325pt x 996.72375pt>
+ [3 <./figures/exemplo-interface.png> <./figures/model-summary.jpeg>]
+<figures/model-accuracy-loss.png, id=20, 2230.3325pt x 996.72375pt>
 File: figures/model-accuracy-loss.png Graphic file (type png)
 
 <use figures/model-accuracy-loss.png>
@@ -653,26 +654,25 @@ Overfull \hbox (24.16759pt too wide) in paragraph at lines 128--129
  [][] 
  []
 
-[3 <./figures/exemplo-interface.png> <./figures/model-summary.jpeg>]
 <figures/frame507.png, id=22, 997.7275pt x 751.80875pt>
 File: figures/frame507.png Graphic file (type png)
 
 <use figures/frame507.png>
-Package pdftex.def Info: figures/frame507.png used on input line 138.
+Package pdftex.def Info: figures/frame507.png used on input line 140.
 (pdftex.def)             Requested size: 289.9963pt x 218.51222pt.
 
 <figures/frame459.png, id=23, 999.735pt x 744.7825pt>
 File: figures/frame459.png Graphic file (type png)
 
 <use figures/frame459.png>
-Package pdftex.def Info: figures/frame459.png used on input line 144.
+Package pdftex.def Info: figures/frame459.png used on input line 146.
 (pdftex.def)             Requested size: 289.9963pt x 216.03821pt.
  [4 <./figures/model-accuracy-loss.png> <./figures/frame507.png>] <figures/fram
 e461.png, id=28, 1007.765pt x 760.8425pt>
 File: figures/frame461.png Graphic file (type png)
 
 <use figures/frame461.png>
-Package pdftex.def Info: figures/frame461.png used on input line 150.
+Package pdftex.def Info: figures/frame461.png used on input line 152.
 (pdftex.def)             Requested size: 289.9963pt x 218.94368pt.
  [5 <./figures/frame459.png> <./figures/frame461.png>] (./CONEM2016.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 14.
@@ -683,11 +683,11 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 Here is how much of TeX's memory you used:
  3739 strings out of 493029
  48833 string characters out of 6136235
- 128242 words of memory out of 5000000
+ 127242 words of memory out of 5000000
  7181 multiletter control sequences out of 15000+600000
  26137 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,45p,713b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,45p,742b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.e
 nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texl
@@ -695,7 +695,7 @@ ive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on CONEM2016.pdf (6 pages, 311690 bytes).
+Output written on CONEM2016.pdf (6 pages, 313149 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
